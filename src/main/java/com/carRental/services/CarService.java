@@ -8,4 +8,8 @@ import java.util.List;
 @Service
 public interface CarService {
     public List<CarDTO> findAll();
+
+    CarDTO findById(Integer id);
+
+    String createCar(CarDTO carDTO);
 }
