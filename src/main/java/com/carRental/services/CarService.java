@@ -11,5 +11,7 @@ public interface CarService {
 
     CarDTO findById(Integer id);
 
-    String createCar(CarDTO carDTO);
+    CarDTO createCar(CarDTO carDTO);
+
+    CarDTO updateCar(CarDTO carDTO);
 }

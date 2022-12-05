@@ -1,6 +1,7 @@
 package com.carRental.services.Impl;
 
 import com.carRental.dtos.CarDTO;
+import com.carRental.entities.Car;
 import com.carRental.mappers.CarMapper;
 import com.carRental.repositories.CarRepository;
 import com.carRental.services.CarService;
@@ -31,8 +32,15 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public String createCar(CarDTO carDTO) {
+    public CarDTO createCar(CarDTO carDTO) {
+        Car car = carMapper.toEntity(carDTO);
+        carRepository.save(car);
+        return carMapper.toDto(car);
+    }
 
-        return "3";
+    @Override
+    public CarDTO updateCar(CarDTO carDTO) {
+        Car car = carMapper.toEntity(carDTO);
+        return createCar(carMapper.toDto(car));
     }
 }

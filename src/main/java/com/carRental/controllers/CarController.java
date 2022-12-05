@@ -2,6 +2,7 @@ package com.carRental.controllers;
 
 import com.carRental.dtos.CarDTO;
 import com.carRental.services.CarService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,8 +29,13 @@ public class CarController {
     }
 
     @PostMapping
-    public String createCar(@RequestBody CarDTO carDTO) {
-        return carService.createCar(carDTO);
+    public ResponseEntity<CarDTO> createCar(@RequestBody CarDTO carDTO) {
+        return new ResponseEntity<>(carService.createCar(carDTO), HttpStatus.CREATED);
+    }
+
+    @PutMapping
+    public ResponseEntity<CarDTO> updateCar(@RequestBody CarDTO carDTO) {
+        return ResponseEntity.ok(carService.updateCar(carDTO));
     }
 
 
