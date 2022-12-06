@@ -1,3 +1,4 @@
+
 .cars {
     margin: 0 0 2em 0;
     list-style-type: none;
@@ -14,12 +15,12 @@
     cursor: pointer;
     position: relative;
     left: 0;
-    background-color: rgb(205, 114, 114);
+    background-color: rgb(255, 255, 255);
     margin: .5em;
     padding: 0;
     border-radius: 4px;
     display: flex;
-    align-items: stretch;
+    align-items: center;
     height: 1.8em;
   }
   
@@ -54,9 +55,9 @@
     font-size: small;
     color: white;
     padding: 0.8em 0.7em 0 0.7em;
-    background-color: #bea66a;
+    background-color: #a82424;
     line-height: 1em;
-    margin-right: .8em;
+    margin-right: 0.8em;
     border-radius: 4px 0 0 4px;
   }
   

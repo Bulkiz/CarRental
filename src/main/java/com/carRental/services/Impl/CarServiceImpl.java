@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-
+@Transactional
 @Service
 public class CarServiceImpl implements CarService {
 
@@ -20,12 +20,13 @@ public class CarServiceImpl implements CarService {
         this.carRepository = carRepository;
         this.carMapper = carMapper;
     }
-    @Transactional
+
     @Override
     public List<CarDTO> findAll() {
         return carMapper.allToDtos(carRepository.findAll());
     }
-    @Transactional
+
+
     @Override
     public CarDTO findById(Integer id) {
         return carMapper.toDto(carRepository.findById(id).get());
